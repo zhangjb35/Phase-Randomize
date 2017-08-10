@@ -1,8 +1,8 @@
 function [ signal_surrogate, faxis, PS ] = randphase( signal,samplerate, method)
-%½«ÊäÈëĞÅºÅ½øĞĞÏàÎ»Ëæ»úÖ®ºóÊä³öËæ»úºóÊ±Óò²¨ĞÎ
-%   input : Ô­Ê¼ĞÅºÅ
-% process : fft ×ª»»µ½ÆµÓò; angle ¼ì²éµ±Ç°ÏàÎ»; Éú³ÉËæ»úÏàÎ»;Ğ´ÈëÏàÎ»;ifft×ª»ØÊ±Óò
-% output : Ìæ´úĞÅºÅ
+%å°†è¾“å…¥ä¿¡å·è¿›è¡Œç›¸ä½éšæœºä¹‹åè¾“å‡ºéšæœºåæ—¶åŸŸæ³¢å½¢
+%   input : åŸå§‹ä¿¡å·
+% process : fft è½¬æ¢åˆ°é¢‘åŸŸ; angle æ£€æŸ¥å½“å‰ç›¸ä½; ç”Ÿæˆéšæœºç›¸ä½;å†™å…¥ç›¸ä½;ifftè½¬å›æ—¶åŸŸ
+% output : æ›¿ä»£ä¿¡å·
 % Get parameters
 [n_time, n_frame] = size(signal);
 if n_frame > n_time
@@ -11,7 +11,7 @@ if n_frame > n_time
     n_time = temp;
     signal = signal';
 end
-% ½â¾öFFTÊä³ö¶Ô³ÆĞÔÎÊÌâ
+% è§£å†³FFTè¾“å‡ºå¯¹ç§°æ€§é—®é¢˜
 [ fixfft_signal, nfft, faxis, PS ] = fixfft( signal, n_time,samplerate, method );
 signal_surrogate = zeros(n_time,n_frame);
 rand_phase = rand([nfft, 1])*2*pi;

@@ -1,5 +1,5 @@
 clear,clc,close all
-%% 模拟信号
+%% 妯℃嫙淇″彿
 %% initialize parameters
 samplerate=500; % in Hz
 N=1024; % data length
@@ -14,7 +14,7 @@ SNR=-2; % in dB
 signal_sim = 2*x1+2*x2;
 % add white noise
 signal_sim = awgn(signal_sim,SNR);
-%% 相位随机
+%% 鐩镐綅闅忔満
 [ signal_sim_randphased, faxis, PS ]  = randphase(signal_sim,samplerate, 'o');
 signal_sim_randphased = signal_sim_randphased(:,:,1);
 %% corr check
@@ -27,7 +27,7 @@ subplot(2,1,2),plot(t,signal_sim_randphased'),xlim([t(1) t(round(N/4))]),ylim([-
 title([ 'Rephased Simulated Data'])
 
 figure
-%% 频率成分对比
+%% 棰戠巼鎴愬垎瀵规瘮
 %% Origin
 [ raw_freq, nfft, faxis, PS ] = fixfft(signal_sim, N, samplerate,  'o' );
 [ rph_freq, nfft, faxis, PS ] = fixfft(signal_sim_randphased, N, samplerate,  'o' );

@@ -1,7 +1,7 @@
 function [ data_freq, nfft, faxis, PS ] = fixfft( data, N, samplerate,  method )
-%fixfft ¾­¹ı¶Ô³ÆĞŞÕıºóµÄFFT×ª»»
-%  ÊäÈëÎªÔ­Ê¼²¨ĞÎ
-%  Êä³öÎª¾­¹ı¶Ô³Æ×ª»»µÄÆµÆ×Í¼
+%fixfft ç»è¿‡å¯¹ç§°ä¿®æ­£åçš„FFTè½¬æ¢
+%  è¾“å…¥ä¸ºåŸå§‹æ³¢å½¢
+%  è¾“å‡ºä¸ºç»è¿‡å¯¹ç§°è½¬æ¢çš„é¢‘è°±å›¾
 windowlength=128;  % in data points
 nfft = 2^nextpow2(N); % Next power of 2 from length of y
 data_freq=fft(data,nfft);
